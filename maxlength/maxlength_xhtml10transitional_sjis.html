@@ -1,0 +1,50 @@
+<?php echo('<?xml version="1.0" encoding="Shift_JIS" ?>') ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>maxlength調査 ::: 0から目指すWebマスター</title>
+<meta name="robots" content="NONE" />
+<meta name="Description" content="Webを様々な角度から切り込み、Webに関する様々な知識を学んでいくための備忘録・情報サイトです。" />
+<meta name="Keywords" content="seo, html, css,javascript,webサイト制作,web標準,川上武範" />
+<meta name="author" content="川上武範,Takenori Kawakami" />
+<meta name="copyright" content="Kawakami Takenori" />
+<script type="text/javascript">
+function check(){
+document.getElementsByName("jscount")[0].value = document.getElementsByName("test")[0].value.length;
+document.getElementsByTagName("form")[0].submit();
+return false;
+}
+</script>
+</head>
+<body>
+<h1>maxlength調査</h1>
+<form method="get" action="/maxlength/" onsubmit="check();return false;">
+<p>
+<input type="hidden" name="jscount" value="javascriptが無効です" />
+<input type="hidden" name="enc" value="sjis" />
+<input type="text" maxlength="5" name="test" value="テスト" />
+</p>
+<p><input type="submit" value="テスト" /></p>
+</form>
+<ul>
+<li><a href="maxlength_xhtml10strict_utf8.html">xhtml1.0 strict utf-8</a></li>
+<li><a href="maxlength_xhtml10strict_sjis.html">xhtml1.0 strict Shift-JIS</a></li>
+<li><a href="maxlength_xhtml10strict_euc.html">xhtml1.0 strict euc-jp</a></li>
+</ul>
+<ul>
+<li><a href="maxlength_xhtml10transitional_utf8.html">xhtml1.0 transitional utf-8</a></li>
+<li><a href="maxlength_xhtml10transitional_sjis.html">xhtml1.0 transitional Shift-JIS</a></li>
+<li><a href="maxlength_xhtml10transitional_euc.html">xhtml1.0 transitional euc-jp</a></li>
+</ul>
+<ul>
+<li><a href="maxlength_html401transitional_utf8.html">html4.01 transitional utf-8</a></li>
+<li><a href="maxlength_html401transitional_sjis.html">html4.01 transitional Shift-JIS</a></li>
+<li><a href="maxlength_html401transitional_euc.html">html4.01 transitional euc-jp</a></li>
+</ul>
+<p style="margin:200px 0 0;padding:10px;border-top:1px solid #ccc;font-size:12px;">&copy; Takenori Kawakami., <a href="http://creativecommons.org/licenses/by/2.1/jp/">Some Rights Reserved.</a></p>
+</body>
+</html>

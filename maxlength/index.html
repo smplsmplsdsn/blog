@@ -1,0 +1,61 @@
+<?php echo('<?xml version="1.0" encoding="UTF-8" ?>') ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>maxlength調査 ::: 0から目指すWebマスター</title>
+<meta name="robots" content="NONE" />
+<meta name="Description" content="Webを様々な角度から切り込み、Webに関する様々な知識を学んでいくための備忘録・情報サイトです。" />
+<meta name="Keywords" content="seo, html, css,javascript,webサイト制作,web標準,川上武範" />
+<meta name="author" content="川上武範,Takenori Kawakami" />
+<meta name="copyright" content="Kawakami Takenori" />
+<script type="text/javascript" src="ecl.js"></script>
+<script type="text/javascript">
+param = location.search;
+if(param){
+	param_txt = param.split("test=")[1];
+	param_enc = param.split("enc=")[1].split("&test=")[0];
+	if(param_enc == "euc"){
+		param_txt_enc = UnescapeEUCJP(param_txt);
+		}else if(param_enc == "sjis"){
+		param_txt_enc = UnescapeSJIS(param_txt);
+		}else{
+		param_txt_enc = UnescapeUTF8(param_txt);
+		}
+	param_length = param.split("jscount=")[1].split("&enc=")[0];
+	window.onload = function(){
+		document.getElementById("param").appendChild(document.createTextNode(param_txt));
+		document.getElementById("enc").appendChild(document.createTextNode(" ： " + param_enc));
+		document.getElementById("enc").appendChild(document.createElement("br"));
+		document.getElementById("enc").appendChild(document.createTextNode(param_txt_enc));
+		document.getElementById("jscount").appendChild(document.createTextNode(param_length));
+		}
+	}
+</script>
+</head>
+<body>
+<h1>maxlength調査</h1>
+<p id="param">パラメータ<br /></p>
+<p id="enc">エンコード</p>
+<p id="jscount">Javascript length<br /></p>
+<ul>
+<li><a href="maxlength_xhtml10strict_utf8.html">xhtml1.0 strict utf-8</a></li>
+<li><a href="maxlength_xhtml10strict_sjis.html">xhtml1.0 strict Shift-JIS</a></li>
+<li><a href="maxlength_xhtml10strict_euc.html">xhtml1.0 strict euc-jp</a></li>
+</ul>
+<ul>
+<li><a href="maxlength_xhtml10transitional_utf8.html">xhtml1.0 transitional utf-8</a></li>
+<li><a href="maxlength_xhtml10transitional_sjis.html">xhtml1.0 transitional Shift-JIS</a></li>
+<li><a href="maxlength_xhtml10transitional_euc.html">xhtml1.0 transitional euc-jp</a></li>
+</ul>
+<ul>
+<li><a href="maxlength_html401transitional_utf8.html">html4.01 transitional utf-8</a></li>
+<li><a href="maxlength_html401transitional_sjis.html">html4.01 transitional Shift-JIS</a></li>
+<li><a href="maxlength_html401transitional_euc.html">html4.01 transitional euc-jp</a></li>
+</ul>
+<p style="margin:200px 0 0;padding:10px;border-top:1px solid #ccc;font-size:12px;">&copy; Takenori Kawakami., <a href="http://creativecommons.org/licenses/by/2.1/jp/">Some Rights Reserved.</a></p>
+</body>
+</html>
