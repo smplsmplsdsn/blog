@@ -1,0 +1,17 @@
+
+ディレクトリ調査,1,/directory_research.php,directory_research.php
+ディレクトリ構造を取得して、自動でディレクトリー・ファイル一覧をつくる,2,/index.html,index.html
+,,/sample,sample
+,,/sample/assets,,assets
+,,/sample/assets/css,,,css
+,,/sample/assets/images,,,images
+,,/sample/assets/js,,,js
+,,/sample/dir1,,dir1
+,3,/sample/dir1/sample11.php,,,sample11.php
+,4,/sample/dir1/sample12.PHP,,,sample12.PHP
+,5,/sample/index.html,,index.html
+,6,/sample/sample1.html,,sample1.html
+,7,/sample/sample2.html,,sample2.html
+,8,/sample/sample3.HTML,,sample3.HTML
+,9,/sample/sample4.php,,sample4.php
+,10,/sample/sample5.php,,sample5.php

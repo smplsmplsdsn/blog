@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>border-image : 0から目指すWebマスター</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<style>
+section{margin:0 0 30px;padding:10px;border-top:5px solid #000;}
+section section{border:none;}
+h1{margin:0 0 10px;padding:10px;font-size:16px;}
+h2{margin:30px 0 10px;font-size:14px;}
+section h1{background:#ddd;}
+
+#test1{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px;
+}
+
+#test2-1{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch;
+}
+#test2-2{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px stretch;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px stretch;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px stretch;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px stretch;
+}
+#test2-3{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px stretch;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px stretch;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px stretch;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px stretch;
+}
+#test2-4{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px stretch;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px stretch;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px stretch;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px stretch;
+}
+#test2-5{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 30px 5px 10px 15px round;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 30px 5px 10px 15px round;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 30px 5px 10px 15px round;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 30px 5px 10px 15px round;
+}
+
+
+#test3-1{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px repeat;
+}
+#test3-2{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px round;
+}
+#test3-3{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px space;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px space;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px space;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px space;
+}
+#test3-4{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round stretch;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round stretch;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px round stretch;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px round stretch;
+}
+#test3-5{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch round;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch round;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px stretch round;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px stretch round;
+}
+
+#test4-1{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 / 27px 27px 27px 27px repeat;
+}
+#test4-2{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 / 27px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 / 27px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 / 27px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 / 27px 27px 27px 27px repeat;
+}
+#test4-3{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 / 27px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 / 27px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 / 27px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 / 27px 27px 27px 27px repeat;
+}
+#test4-4{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px 27px 27px 27px repeat;
+}
+#test4-5{
+line-height:27px;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px 10px 20px 40px repeat;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px 10px 20px 40px repeat;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px 10px 20px 40px repeat;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png) 27 10 20 40 / 27px 10px 20px 40px repeat;
+}
+
+.test5{
+display:inline-block;
+line-height:40px;
+color:#fff;
+border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow.png) 23 82 23 26 / 23px 82px 23px 26px;
+-moz-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow.png) 23 82 23 26 / 23px 82px 23px 26px;
+-webkit-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow.png) 23 82 23 26 / 23px 82px 23px 26px;
+-o-border-image: url(https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow.png) 23 82 23 26 / 23px 82px 23px 26px;
+}
+
+
+</style>
+<body>
+<article>
+<h1><a href="https://simplesimples.com/web/markup/css/border_border-image/">borderで背景画像を表示する border-image</a></h1>
+<section>
+<figure><img src="https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_dot.png" alt="" /></figure>
+<section>
+<h1>基本</h1>
+<h2>test1 : 画像パス スライス 幅 （リピート：stretch）</h2>
+<div id="test1">サンプル</div>
+</section>
+<section>
+<h1>border-image-width</h1>
+<h2>test2-1 : 27px</h2>
+<div id="test2-1">サンプル</div>
+<h2>test2-2 : 27px 27px</h2>
+<div id="test2-2">サンプル</div>
+<h2>test2-3 : 27px 27px 27px</h2>
+<div id="test2-3">サンプル</div>
+<h2>test2-4 : 27px 27px 27px 27px</h2>
+<div id="test2-4">サンプル</div>
+<h2>test2-5 : 27px 5px 10px 15px</h2>
+<div id="test2-5">サンプル</div>
+</section>
+<section>
+<h1>border-image-repeat</h1>
+<h2>test3-1 : repeat</h2>
+<div id="test3-1">サンプル</div>
+<h2>test3-2 : round</h2>
+<div id="test3-2">サンプル</div>
+<h2>test3-3 : space</h2>
+<div id="test3-3">サンプル</div>
+<h2>test3-4 : round stretch</h2>
+<div id="test3-4">サンプル<br />サンプル</div>
+<h2>test3-5 : stretch round</h2>
+<div id="test3-5">サンプル<br />サンプル</div>
+</section>
+<section>
+<h1>border-image-slice</h1>
+<h2>test4-1 : 27</h2>
+<div id="test4-1">サンプル</div>
+<h2>test4-2 : 27 10</h2>
+<div id="test4-2">サンプル</div>
+<h2>test4-3 : 27 10 20</h2>
+<div id="test4-3">サンプル</div>
+<h2>test4-4 : 27 10 20 40</h2>
+<div id="test4-4">サンプル</div>
+<h2>test4-5 : 27 10 20 40 / 27px 10px 20px 40px</h2>
+<div id="test4-5">サンプル</div>
+</section>
+</section>
+
+<section>
+<figure><img src="https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow.png" alt="" /></figure>
+<figure><img src="https://data.simplesimples.com/wp-content/uploads/allinthemind/markup/css_border_image_arrow_ex.png" alt="図説：border-image-slice" /></figure>
+<section>
+<h1>まとめ</h1>
+<h2>test5 : 23 82 23 26</h2>
+<div class="test5">サンプル</div>
+<div class="test5">サンプルサンプルサンプルサンプル</div>
+</section>
+</section>
+</article>
+
+</body>
+</html>

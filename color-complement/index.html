@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>補色と反転色</title>
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<style type="text/css">
+body{margin:0;padding:20px;font-size:14px;line-height:1;}
+h1{margin:0 0 10px;padding:0;font-size:16px;}
+form{margin:0;padding:0;}
+.color{width:280px;margin:0;padding:30px 0 0;}
+.color-img{width:100%;height:50px;background:#eee;}
+.color-txt{margin:5px 0 0;padding:0;font-size:12px;}
+.mes{display:none;marign:0;padding:10px;background-color:#CE1F21;color:#fff;}
+</style>
+</head>
+<body>
+<h1>補色と反転色</h1>
+<form class="submit-color" onSubmit="return false;">
+<p>
+<input type="text" name="color" value="" />
+<input type="submit" value="カラー値取得する" />
+</p>
+<p>例：#123456 / 12, 34, 56</p>
+</form>
+<p class="mes"></p>
+
+<div class="color color1">
+  <div class="color-img"></div>
+  <p class="color-txt">カラー: <span></span></p>
+</div>
+
+<div class="color color2">
+  <div class="color-img"></div>
+  <p class="color-txt">補色: <span></span></p>
+</div>
+
+<div class="color color3">
+  <div class="color-img"></div>
+  <p class="color-txt">反転色: <span></span></p>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="./color-complement.js"></script>
+<script>
+$('.submit-color').on('submit', function(){
+  $('.mes').hide().html('');
+  $('.color-img').css({background:'#eee'});
+  var result = Color.info($('[name="color"]').val());
+
+  console.log(result, $('[name="color"]').val())
+  if (result) {
+    $('.color1 .color-img').css({background: result['16']});
+    $('.color2 .color-img').css({background: result['complementary16']});
+    $('.color3 .color-img').css({background: result['reversal16']});
+    $('.color1 .color-txt span').html(result['16']);
+    $('.color2 .color-txt span').html(result['complementary16']);
+    $('.color3 .color-txt span').html(result['reversal16']);
+  } else {
+    $('.mes').css({display: 'inline-block'}).html('取得できませんでした。');
+  }
+  return false;
+});
+
+</script>
+</body>
+</html>

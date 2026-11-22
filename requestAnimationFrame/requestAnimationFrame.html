@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>requestAnimationFrameの場合</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <p id="test"></p>
+  
+  <script>
+
+    const research_time = 10000,  // 調査する時間: ミリ秒
+          t = (new Date()).getTime();
+
+    let count = 0,
+        t_update = t;
+
+    const sample = () => {
+      const t_new = (new Date()).getTime();
+
+      if (t_new - t < research_time) {
+        count++;
+        document.getElementById('test').innerHTML = (t_new - t_update);
+
+        t_update = t_new;
+
+        window.requestAnimationFrame(sample);
+      } else {
+        document.getElementById('test').innerHTML = '実行回数 ' + count;
+      }
+    }
+
+    sample();
+    
+    clearTimeout
+  </script>  
+</body>
+</html>

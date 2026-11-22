@@ -1,0 +1,40 @@
+.btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  padding: 10px 10px 40px;
+  
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: $btn-radius;
+    background: $color-link;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .icon-forward {
+    display: none;
+  }
+}
+
+.change-viewing {
+  .btn__link {
+    animation: scale-hide-show 0.65s;
+  }  
+}
+.is-search {
+  
+  .icon-forward {
+    display: block;
+  }
+  .icon-search {
+    display: none;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>History API を「あらためて」使ってみる</title>
+</head>
+<body>
+
+<h1 class="title">トップ</h1>
+
+<p>このサンプルでは、下記のリンクをクリックした際に、リンクの遷移先を履歴として追加し、実際にはページ遷移はさせずに、タイトルの差し替えを行います。</p>
+
+<ul>
+<li><a href="?pg=top">トップ</a></li>
+<li><a href="?pg=about">会社概要</a></li>
+<li><a href="?pg=service">サービス</a></li>
+<li><a href="?pg=recruit">採用情報</a></li>
+<li><a href="?pg=contact">お問合わせ</a></li>
+</ul>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+var isHistoryPush = false;
+
+function historyPushState(data, title, url) {
+  if (history && history.pushState) {
+    history.pushState(data, title, url);
+    isHistoryPush = true;
+  }
+}
+
+function setHistory(func) {
+  if (history && history.pushState) {
+    $(window).on('popstate', function(event){
+      if (func && isHistoryPush) func(event.originalEvent.state);
+    });
+  }
+}
+</script>
+
+<script type="text/javascript">
+
+// ブラウザ・端末の「戻る」「進む」をクリック（タップ）した際に、タイトルのテキストを変更します。
+setHistory(function(data){
+  var data = data || 'トップ';
+  $('.title').html(data);
+});
+
+// リンクをクリックした際に、リンクテキストとリンク先のURLをHistory API にセットし、タイトルのテキストを変更します。
+$('a').on('click', function() {
+  var data = $(this).text(),
+        url = $(this).attr('href');
+
+  historyPushState(data, null, url);
+  $('.title').html(data);
+  return false;  
+})
+</script>
+</body>
+</html>

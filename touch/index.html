@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<style type="text/css">
+#test{display:block;padding:20px;background:#eee;cursor:pointer;}
+#test.protected{background:#666;}
+</style>
+</head>
+<body>
+<h1><a>スマホでマウスオーバー ベーシック版</a></h1>
+<a id="test">これはテスト</a>
+
+<script type="text/javascript">
+function test (e) {
+	e.innerHTML = ('this is test' == e.innerHTML)? 'これはテスト' : 'this is test';
+  return false;
+}
+var flag_link = true;
+var a = document.getElementById('test');
+if ("object" == typeof document.documentElement.ontouchend) {
+	a.ontouchstart = function () {
+		a.className = 'protected';
+	}
+	a.ontouchmove = function () {
+		flag_link = false;
+	}
+	a.ontouchend = function () {
+		a.className = '';
+		if (flag_link) {
+			test(a);
+		}
+		flag_link = true;
+	}
+	
+} else {
+	a.onclick = function () {
+		test(a);
+	}
+}
+</script>
+</body>
+</html>

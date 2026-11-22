@@ -1,0 +1,785 @@
+// body (base/common.scss)
+$color-default: #222325;
+$color-default-o: #faebd7;
+$color-default-o: #fff;
+$color-link: #ea352d;
+$color-link: #af2c02;
+$color-link: #00547a;
+$color-link-on: darken($color-link, 25%);
+
+// form（base/reset.scss）
+$border-color-form: #ccc;
+$max-width-form: 400px;
+
+// responsive web design breakpoint（setting/**/*.scss）
+$breakpoint-default: 400px;
+
+// SNS color
+$twitter: #1DA1F2;
+$facebook: #3B5998;
+$youtube: #ff0000;
+$instagram: mix($facebook, $youtube);
+$instagram: linear-gradient(to bottom right, #5300c1, #c40094, #e80029);
+$line: #00b900;
+$github: #25292D;
+
+/**
+ * Depend on service
+ */
+$btn-radius: 48%;
+$search-bg: #fbfaf5;
+
+
+
+
+
+/**
+ * 回転
+ */
+@keyframes keyframes-spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+.animation-spin{animation: keyframes-spin 1.5s linear infinite;}
+
+/**
+ * 点滅
+ */
+@keyframes keyframes-blinker {
+  0% {opacity: 1;}
+  50% {opacity: 0.2;}
+  100% {opacity: 1;}
+}
+.animation-blinker{animation: keyframes-blinker 1s infinite;}
+
+/**
+ * ローディングバー
+ */
+@keyframes keyframes-loading {
+  0% {transform: translate3d(-100%,0,0);}
+  50% {transform: translate3d(0,0,0);}
+  100% {transform: translate3d(100%,0,0);}
+}
+.animation-loadingbar{animation: keyframes-loading 2s infinite;}
+
+/**
+ * 拡大して元に戻る
+ */
+@keyframes scale-up-down {
+  0% {transform: scale(1);}
+  65% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+/**
+ * 回転しながら消えて元に戻る
+ */
+@keyframes scale-hide-show {
+  0% {transform: scale(1) rotate(0deg);}
+  50% {transform: scale(0) rotate(360deg);}
+  100% {transform: scale(1) rotate(0deg);}
+}
+@font-face {
+  font-family: "Crushed";
+  src: url(../font/Crushed-Regular.woff2),
+    url(../font/Crushed-Regular.woff);
+}
+/**
+ * 横幅が指定サイズ以下の場合
+ */
+@mixin mq-max($break-point: $breakpoint-default) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+/**
+ * 横幅が指定サイズ以上の場合
+ */
+@mixin mq-min($break-point: $breakpoint-default) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+/**
+ * 横幅が指定最小サイズ以上指定最大サイズ以下の場合
+ */
+@mixin mq($break-point-min, $break-point-max) {
+  @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+
+@mixin overflow {
+  -webkit-overflow-scrolling: touch;
+}
+@mixin rotate {
+  span[class^="icon-"] {
+    transition: transform 0.5s;
+  }
+  &:hover,
+  &.hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    span {
+      transform: rotateY(-360deg);
+    }
+  }  
+}
+/**
+ * ブレイクポイントで指定プロパティの値を切り替える
+ */
+@mixin set-property($property, $size, $size-pc, $break-point: $breakpoint-default){
+  #{$property}: $size;
+  @media screen and (min-width: $break-point) {
+    #{$property}: $size-pc;
+  }
+}
+
+/**
+ * 横幅が指定サイズまではvwで、それ以上のサイズは固定サイズで表示する
+ */
+@mixin set-property-vw($property, $size, $size-pc, $break-point: $breakpoint-default){
+  #{$property}: get-vw($size);
+  @media screen and (min-width: $break-point) {
+    #{$property}: $size-pc;
+  }
+}
+
+
+
+/**
+ * 斜め背景線
+ */
+@mixin bg-stripe-01 {
+  background-color: #fff;  
+  background-image: linear-gradient(-45deg, #eee 0%, #eee 25%, transparent 25%, transparent 50%, #eee 50%, #eee 75%, transparent 75%, transparent 100%);
+  background-repeat: repeat;
+  background-size: 10px 10px;
+}
+
+/**
+ * Depend on project
+ */
+body{
+  // font-family:"メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+//  font-family: -apple-system, BlinkMacSystemFont, YuGothic, "Yu Gothic", "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Sans-Serif;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Sans-Serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif;
+  background: $color-default-o;
+  color: $color-default;
+  font-size: 14px;
+  letter-spacing: 0.02rem;
+}
+
+a {
+  color: $color-link;
+}
+
+.nowrap {
+  display: inline-block;
+}
+
+// safari でフォーム要素が、display:none が効かないための応急対応
+.bugfix-safari-hide {
+  display: none;
+}
+
+// Android で Pull to Refresh を無効にする
+body {
+  overscroll-behavior-y: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+body {
+  word-break: break-word;
+}
+body {
+  word-wrap: break-word;
+}
+
+main,
+article,
+section,
+header,
+footer,
+aside,
+dl,
+dt,
+dd,
+h1, h2, h3, h4, h5, h6,
+p,
+form,
+figcaption {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li{
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+img,
+figure{
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+small {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+a,
+label{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+a,
+label,
+button{
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+select {
+    @include set-property(height, 44px, 30px, $max-width-form);
+    @include set-property(font-size, 16px, 15px, $max-width-form);
+}
+
+.submit,
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="submit"],
+button,
+textarea {
+  -webkit-appearance: none;
+  display:block;
+  width:100%;  
+  @include set-property(height, 44px, 30px, $max-width-form);
+  padding: 0 0.4rem;
+  border-radius: 4px;
+  border:1px solid $border-color-form;
+  box-sizing:border-box;
+  background: #fff;
+  box-shadow:none;
+  @include set-property(font-size, 16px, 15px, $max-width-form);
+  &:focus{
+    outline: 0; 
+  }
+}
+
+textarea{
+  @include set-property(height, 150px, 200px, $max-width-form);    
+  @include set-property(font-size, 16px, 14px, $max-width-form);
+  padding: 0.4rem;
+}
+
+input:focus:placeholder-shown {
+  color: transparent;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+table{
+  border: none;
+  border-collapse: collapse;
+}
+
+/**
+ * iPhone、AndroidのモバイルWebでの長押しアクションを無効化する
+ * http://paranishian.hateblo.jp/entry/css/mobileweb
+ */
+body, a {
+  
+  // リンク長押しのポップアップを無効化
+  -webkit-touch-callout:none;
+}
+
+a {
+  
+  // テキスト長押しの選択ボックスを無効化
+  -webkit-user-select:none;
+}
+
+
+.btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  padding: 10px 10px 40px;
+  
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: $btn-radius;
+    background: $color-link;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .icon-forward {
+    display: none;
+  }
+}
+
+.change-viewing {
+  .btn__link {
+    animation: scale-hide-show 0.65s;
+  }  
+}
+.is-search {
+  
+  .icon-forward {
+    display: block;
+  }
+  .icon-search {
+    display: none;
+  }
+}
+.form {
+    
+  &__table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    border-bottom: 1px dashed #ddd;
+  }
+  
+  th {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  
+  td:last-child {
+    width: 42px;
+    text-align: center;
+  }
+  
+  &__table--condition {    
+    td:nth-child(2) {
+      width: 100%;
+    }    
+  }
+  
+  &__table--sort {
+    margin: 50px 0 0;
+    border-top: 1px solid #ddd;
+    
+    td:nth-child(1) {
+      width: 100%;
+    }
+    td:nth-last-child(2) {
+      // width: 8em;
+    }
+  }
+  &__table-number {
+    font-size: 10px;
+    margin: 0 0 0 5px;
+  }
+  
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__combine {
+    padding: 0 10px;
+  }
+  
+  &__label {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    label {
+      display: flex;
+      align-items: center;
+      margin: 0 10px 0 0;
+      
+      span {
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+  
+  &__clear-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-link;
+    border-radius: $btn-radius;
+    transform: scale(-1, 1);
+    font-size: 10px;
+  }
+  
+  &__btn {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0 2rem;
+
+    a {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid $color-link;
+      border-radius: 2px;
+      
+      &:last-child {
+        background: #fff;
+      }
+    }
+  }
+    
+  &__switch-link {
+    display: flex;
+    width: 8em;
+    font-size: 11px;
+    border: 1px solid $color-link;
+    border-radius: 2px;
+    text-align: center;
+    
+    span {
+      width: 4em;
+      padding: 3px 0;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    
+    &[data-value="1"] span:nth-child(1),
+    &[data-value="2"] span:nth-child(2) {
+      background: $color-link;
+      color: #fff;      
+    }
+    
+    span:first-child {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    
+    span:last-child {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-left: 1px solid $color-link;
+    }
+  }
+  
+}
+$search-width: 380px;
+$search-width-s: 320px;
+
+.frame {
+  
+  &__content {
+    margin: 0 0 0 $search-width;
+    max-width: 600px;
+  }
+  
+  &__list {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  @include mq-min(1200px) {
+    &__content {
+      max-width: 100%;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;      
+      max-width: 100%;
+      margin: 0;
+      padding: 0 2rem 2rem;
+    }
+    
+    .unit {
+      width: 400px;
+    }
+    
+    .header {
+      text-align: left;
+    }
+  }
+  
+  &__search {
+    background: #fbfaf5;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: $search-width;
+    height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    overflow: auto;
+  }
+  
+  &__form {    
+    max-width: 520px;    
+    margin: 0 auto;
+    padding: 0 10px 3rem;
+    box-sizing: border-box;
+  }
+  
+  &__menu {
+    display: none;
+  }
+  
+  
+  @include mq-max(840px) {
+    &__search {
+      width: $search-width-s;
+    }
+    
+    &__content {
+      margin: 0 0 0 $search-width-s;
+    }
+    
+  }
+  
+  
+  @include mq-max(720px) {
+        
+    &__search {
+      width: 100%;
+      left: -100vw;
+      transition: left 0.3s;
+    }
+    
+    &__menu {
+      display: block;
+    }    
+    
+    &__form {
+      width: 100%;
+      min-width: 290px;
+      min-height: calc(100% - 1px);
+      padding-bottom: 120px;
+      box-sizing: border-box;
+    }
+    
+    &__content {
+      max-width: 100%;
+      margin: 0;
+      padding-bottom: 120px;
+    }
+  }
+}
+
+@include mq-max(720px) {
+  .is-search.frame {
+    position: fixed;
+    left: 0;
+    width: 100%;    
+  }
+  
+  .is-search .frame__search {
+    left: 0;    
+  }
+  
+  .is-search .frame__content {
+    position: fixed;
+    left: 0;
+  }
+}
+
+
+.header {
+  padding: 2rem;
+  text-align: center;
+  line-height: 1.5;
+  
+  &__title {
+    font-size: 100%;
+  }
+  
+  &__ex {
+    min-height: 1em;
+  }
+}
+.search {
+  &__inner {
+    padding: 2rem 0 0;
+  }
+}
+$unit-padding: 1em;
+$unit-sub-color: #999;
+
+.unit {
+  margin: 0 0 $unit-padding*1.618;
+  padding: $unit-padding;
+  line-height: 1.5;
+  font-size: 12px;
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 0 $unit-padding;
+  }
+  
+  &__maker {
+    white-space: nowrap;
+  }
+  &__name {
+    padding: 0 0 0 $unit-padding/2;
+    line-height: 1.2;
+  }
+  
+  &__ex {
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    > span:not(:last-child)::after {
+      content: '/';
+      padding: 0 3px;
+      font-size: 10px;
+    }
+    
+    > span {
+      white-space: nowrap;
+    }
+    
+    span span {
+      font-size: 10px;
+    }
+  }
+  
+  &__price-best {
+    color: $unit-sub-color;
+    font-size: 10px;
+  }
+  
+  &__column {
+    display: flex;
+    align-items: center;
+    padding: 0 0 $unit-padding;
+  }
+  
+  
+  &__img {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  &__text {
+    padding: 0 0 0 $unit-padding;
+  }
+  
+  &__spec {
+    overflow: hidden;
+    
+    div {
+      float: left;
+      display: flex;
+      align-items: center;
+    }
+    
+    dt,
+    dd {
+      white-space: nowrap;
+    }
+    
+    dt {
+      padding: 0 3px 0 0;
+      color: $unit-sub-color;
+      font-size: 10px;
+    }
+    
+    dd {
+      padding: 0 10px 0 0;
+    }
+  }
+  
+  &__add {
+    padding: $unit-padding/2 0 0;
+    font-size: 11px;
+  }
+  
+  &__price-label {
+    font-size: 10px;
+  }
+  
+  &__price-num {
+    font-size: 18px;
+    span {
+      font-size: 10px;
+    }
+  }
+  
+  &__price-date {
+    font-size: 10px;
+  }
+  
+  &__footer {
+    display: flex;
+    padding: $unit-padding 0 0;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    padding: 0 8px;
+    border: 1px solid $color-link;
+    border-radius: 2px;
+    font-size: 11px;
+    
+    &:first-child {
+      margin: 0 5px 0 0;
+    }
+  }
+}

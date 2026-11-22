@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>iframeの高さを自動調整するデモ（after）</title>
+</head>
+<body>
+
+<h1>iframeの高さを自動調整するデモ（after）</h1>
+
+<h2>縦幅が広いb.htmlを読み込んでいる状態のiframeに縦幅が狭いa.htmlを読み込む</h2>
+<iframe src="b.html" frameborder="0" width="100%" height="150"></iframe>
+<iframe src="a.html" frameborder="0" width="100%" height="150"></iframe>
+
+<h2>縦幅が広いb.htmlを読み込んでいる状態のiframeに縦幅が狭いa.htmlを読み込む</h2>
+<iframe src="b.html" frameborder="0" style="width:100%;height:150px;"></iframe>
+<iframe src="a.html" frameborder="0" style="width:100%;height:150px;"></iframe>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+$('iframe')
+.on('load', function(){
+  try {  
+    $(this).height(this.contentWindow.document.documentElement.scrollHeight);
+  } catch (e) {
+  }
+})
+.trigger('load');
+</script>
+</body>
+</html>

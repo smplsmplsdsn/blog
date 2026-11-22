@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>スマホマウスオーバー</title>
+  <style>
+    p {
+      text-align: center;
+    }
+    
+    #test,
+    #after {
+      display: inline-block;
+      padding: 10px;
+      background: #eee;
+    }
+    
+    .over {
+      box-shadow: 0 0 10px #aaa;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+<h1><a>スマホでマウスオーバー ベーシック版</a></h1>
+  
+<p>  
+  <a id="test">これはテスト</a>
+</p>
+
+<script>  
+  var element_test = document.getElementById("test");
+    
+  /**
+   * タップしたとき、タップしたまま移動したとき、タップを離したとき
+   * （タッチイベントが有効な場合のみのアクション）
+   */
+  if (('ontouchstart' in window && 'ontouchend' in window) || navigator.msPointerEnabled) {
+    
+    element_test.ontouchstart = function () {
+      element_test.className = 'over';
+    }
+    element_test.ontouchmove = function () {
+      element_test.className = '';
+    }
+    element_test.ontouchend = function () {
+      element_test.className = '';
+    }
+    
+    element_test.onclick = function () {
+      element_test.className = '';
+      element_test.innerHTML = 'タップされました';
+      return false;
+    }
+  }
+</script>
+</body>
+</html>

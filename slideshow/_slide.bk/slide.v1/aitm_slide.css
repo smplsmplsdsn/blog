@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*--------------------------
+create:takenori kawakami
+
+/markup/library/photo_slide.html 
+2011.03.05 create
+2011.03.06 update
+--------------------------*/
+
+/*for ie or Opera*/
+.photo_prev.ie,
+.photo_next.ie{float:left;width:30px;}
+.photo_wrap.ie{float:left;}
+
+/*common*/
+.photo_slide{display:-moz-box;display:-webkit-box;display:-ms-box;display:box;width:100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
+.photo_prev,.photo_next{height:100%;-webkit-box-flex: 1;-moz-box-flex: 1;box-flex: 1;}
+.photo_prev{visibility:hidden;background-image:url(prev.png);background-position:right center;background-repeat:no-repeat;}
+.photo_next{visibility:hidden;background-image:url(next.png);background-position:left center;background-repeat:no-repeat;}
+.photo_prev div,.photo_next div{display:none;}
+.photo_wrap{position:relative;height:100%;overflow:hidden;border:1px solid #eee;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
+.photo{position:absolute;top:0;left:0;height:100%;-webkit-transition: .3s;-moz-transition: .3s;-ms-transition: .3s;transition: .3s;}
+.photo figure{position:relative;top:0;left:0;display:block;float:left;overflow:hidden;margin:0;padding:0;}
+.photo .img_wrap{display:table-cell;margin:0;padding:0;text-align:center;vertical-align:middle;}
+.photo .top,.photo .bottom{position:absolute;left:0;display:block;width:100%;margin:0;padding:3px;background-color:#444;color:#aaa;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;opacity:0;filter:alpha(opacity="0");}
+.photo .top{top:0;}
+.photo .bottom{bottom:0;}
+.photo .caption_on .top,.photo .caption_on .bottom{opacity:0.9;filter:alpha(opacity="90");-webkit-transition: .3s;-moz-transition: .3s;-ms-transition: .3s;transition: .3s;}

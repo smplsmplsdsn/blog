@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og:http://ogp.me/ns#">
+<meta charset="utf-8" />
+<title>スライドショー</title>
+<meta name="robots" content="NONE" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" href="slide.css" />
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+    background: #eee;
+  }
+  h1, h2{text-align: center;}
+
+  #a .slideshow-frame{width: 200px;height: 160px;padding: 20px;}  
+  #a2 .slideshow-frame{width: 200px;height: 160px;padding: 20px;}  
+  #b .slideshow-frame{width: 200px;height: 160px;padding: 20px;}  
+  #c .slideshow-frame{width: 100%;height: 250px;}
+  #c .slideshow-frame,
+  #c .slideshow-nav{max-width:800px;}
+    
+  #a2 .slideshow-bg{display: block;width: 100%; height: 100%;}
+</style>
+</head>
+<body>
+
+<h1>スライドショー</h1>
+
+<h2>リンクあり</h2>
+
+<div class="slideshow" id="a2">
+  <div class="slideshow-frame">
+    <div class="slideshow-all" data-pos="0">
+      <div class="slideshow-unit"><a class="slideshow-bg" href="#1" data-image="img/1.jpg">1</a></div>
+      <div class="slideshow-unit"><a class="slideshow-bg" href="#2" data-image="img/2.jpg">2</a></div>
+      <div class="slideshow-unit"><a class="slideshow-bg" href="#3" data-image="img/3.jpg">3</a></div>
+    </div>
+  </div>
+  <p class="slideshow-nav-list"></p>
+</div>
+
+<h2>リンクなし</h2>
+
+<div class="slideshow" id="a">
+  <div class="slideshow-frame">
+    <div class="slideshow-all" data-pos="0">
+      <div class="slideshow-unit slideshow-bg" data-image="img/1.jpg">1</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/2.jpg">2</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/3.jpg">3</div>
+    </div>
+  </div>
+  <p class="slideshow-nav-list"></p>
+</div>
+
+<div class="slideshow" id="b">
+  <div class="slideshow-frame">
+    <div class="slideshow-all" data-pos="0">
+      <div class="slideshow-unit slideshow-bg" data-image="img/1.jpg">1</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/2.jpg">2</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/3.jpg">3</div>
+    </div>
+  </div>
+  <p class="slideshow-pagination">
+    <a class="slideshow-prev"></a>
+    <a class="slideshow-next"></a>
+  </p>
+</div>
+
+<div class="slideshow" id="c">
+  <div class="slideshow-frame">
+    <div class="slideshow-all" data-pos="0">
+      <div class="slideshow-unit slideshow-bg" data-image="img/1.jpg">1</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/2.jpg">2</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/3.jpg">3</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/4.jpg">4</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/5.jpg">5</div>
+    </div>
+  </div>
+  <div class="slideshow-nav">
+    <p class="slideshow-nav-list"></p>
+    <p class="slideshow-pagination">
+      <a class="slideshow-prev js-slideshow-prev"></a>
+      <a class="slideshow-next js-slideshow-next"></a>
+    </p>
+  </div>
+</div>
+
+<div class="slideshow" id="d">
+  <div class="slideshow-frame">
+    <div class="slideshow-all" data-pos="0">
+      <div class="slideshow-unit slideshow-bg" data-image="img/1.jpg">1</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/2.jpg">2</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/3.jpg">3</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/4.jpg">4</div>
+      <div class="slideshow-unit slideshow-bg" data-image="img/5.jpg">5</div>
+    </div>
+  </div>
+  <div class="slideshow-nav">
+    <p class="slideshow-nav-list"></p>
+    <p class="slideshow-pagination">
+      <a class="slideshow-prev js-slideshow-prev"></a>
+      <a class="slideshow-next js-slideshow-next"></a>
+    </p>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="slide-4.0.js"></script>
+<script type="text/javascript">
+/**
+ * ページ読み込み後に処理をする
+ * (読み込み準備完了で実行してしまうとページ読み込みに時間がかかる場合があるため)
+ */
+$(window).on("load", function(){
+  slideshow.init($("#a2"), 2000);
+  slideshow.init($("#a"), 2000);
+  slideshow.init($("#b"));
+  slideshow.init($("#c"), 3000);
+  slideshow.init($("#d"));
+});
+
+/**
+ * スライドショーをタップしたときの処理
+ * 
+ * num: 何枚目のスライドか
+ * p: どのスライドショーか（タップしたスライドの親要素「.slideshow」を参照する）
+ * func_stop_auto:　タップした際に、オートモードを止めるための関数
+ */
+slideshow.actClick = function(num, p, func_stop_auto) {
+  var tgt = $(".slideshow-unit:nth-child(" + num + ") a", p);
+
+  if (tgt.attr("href")) {
+    location.href = tgt.attr("href");
+    func_stop_auto();
+  }
+  return false;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タッチ判定調査</title>
+<meta name="robots" content="NONE" />
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+<style type="text/css">
+h1{margin:0 0 10px;padding:10px;font-size:16px;}
+p{margin:0;padding:10px;line-height:1.2;font-size:12px;}
+
+form{padding:10px;font-size:14px;}
+label{display:block;padding:10px;border:1px solid #ccc;border-radius:5px;}
+
+table{width:100%;border-bottom:1px solid #ccc;}
+th{font-size:12px;}
+td{height:40px;padding:5px 0;border-top:1px solid #ccc; vertical-align:middle;text-align:center;font-size:14px;}
+td:first-child{text-align:left;}
+td:last-child{text-align:right;}
+td a{display:inline-block;height:40px;background:#666;}
+.test1 a{width:20px;}
+.test2 a{width:40px;}
+.test3 a{width:44px;}
+.test4 a{width:60px;}
+
+td a.prev{background:#fff url(touch_prev.png) top left no-repeat;}
+td a.next{background:#fff url(touch_next.png) top right no-repeat;}
+.clicableview td a.prev{background:#999 url(touch_prev.png) top left no-repeat;}
+.clicableview td a.next{background:#999 url(touch_next.png) top right no-repeat;}
+
+.reset{display:block;width:100px;margin:30px auto 50px;padding:10px;border:1px solid #ccc;text-align:center;}
+.useragent{display:inline-block;margin:0 0 30px;padding:10px;}
+</style>
+</head>
+<body>
+<h1><a href="https://simplesimples.com/web/markup/javascript/smartphoneevent/">スマホでイベントをちゃんと認識するか確認</a></h1>
+
+<p>仕組み: 正しくイベントが発動すると、左側のグレー領域をタップすると「-1」、右側のグレー領域をタップすると「+1」、カウントする。</p>
+
+<form>
+<label><input type="checkbox" class="chk" />クリッカブル領域表示</label>
+</form>
+
+<table>
+<thead>
+<tr>
+<th class="btn_test"></th>
+<th>幅(※)</th>
+<th>touch<br />
+start</th>
+<th>touch<br />
+end</th>
+<th>click</th>
+<th class="btn_test"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="test1">
+<td><a class="prev" href="#"></a></td>
+<td class="width"></td>
+<td class="start">0</td>
+<td class="end">0</td>
+<td class="click">0</td>
+<td><a class="next" href="#"></a></td>
+</tr>
+<tr class="test2">
+<td><a class="prev" href="#"></a></td>
+<td class="width"></td>
+<td class="start">0</td>
+<td class="end">0</td>
+<td class="click">0</td>
+<td><a class="next" href="#"></a></td>
+</tr>
+<tr class="test3">
+<td><a class="prev" href="#"></a></td>
+<td class="width"></td>
+<td class="start">0</td>
+<td class="end">0</td>
+<td class="click">0</td>
+<td><a class="next" href="#"></a></td>
+</tr>
+<tr class="test4">
+<td><a class="prev" href="#"></a></td>
+<td class="width"></td>
+<td class="start">0</td>
+<td class="end">0</td>
+<td class="click">0</td>
+<td><a class="next" href="#"></a></td>
+</tr>
+</tbody>
+</table>
+<p>※クリッカブル領域の横幅px</p>
+<a class="reset">リセット</a>
+<a class="useragent">ユーザーエージェント取得</a>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+(function(){
+
+	$('.width').each(function(){
+		var w = $('.prev', $(this).parent()).width();
+		$(this).html(w);
+	});
+
+	$('.chk').on('change', function(){
+		$('table').toggleClass('clicableview')
+		if($(this).is(':checked')) {
+		}
+	});
+
+	$('.useragent').on('click', function(){
+		$(this).html(navigator.userAgent);
+	})
+
+
+	function funcCount(pn, act, e){
+		var t = $('.' + act, e.parent().parent());
+		var n = +(t.text());
+		if ('prev' == pn) {
+			n--;
+		} else {
+			n++;
+		}
+		t.html(n);
+	}
+
+	$('.prev')
+	.on('click', function(){funcCount('prev', 'click', $(this));return false;})
+	.on(common.actStart, function(){funcCount('prev', 'start', $(this));})
+	.on(common.actEnd, function(){funcCount('prev', 'end', $(this));});
+	$('.next')
+	.on('click', function(){funcCount('next', 'click', $(this));return false;})
+	.on(common.actStart, function(){funcCount('next', 'start', $(this));})
+	.on(common.actEnd, function(){funcCount('next', 'end', $(this));});
+
+	$('.reset')
+	.on('click', function(){
+		$('.click, .start, .end').html('0');
+		return false;
+	});
+
+})();
+</script>
+</body>
+</html>

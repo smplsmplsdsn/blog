@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>History API を使ってみる 1</title>
+</head>
+<body>
+<h1 id="h1">History API を使ってみる 1</h1>
+<p><a href="#" onclick="setHistoryApi();return false;">URL更新</a></p>
+<hr />
+<p><a href="history1.html">History API を使ってみる 1</a></p>
+<p><a href="history2.html">History API を使ってみる 2</a></p>
+<script type="text/javascript">
+// ヒストリー後、もしくはbackボタン後
+function getHistoryApi(p, s){
+	document.getElementById('h1').innerHTML = p + s;
+}
+
+// ヒストリーする
+function setHistoryApi(){
+	// history api が使えるか判別
+	if (history && history.pushState) {
+		var t = new Date().getTime();
+		var p = location.pathname;
+		var s = '?time=' + t;
+		getHistoryApi(p, s);
+		history.pushState(t, document.title, p + s);
+	} else {
+		document.getElementById('h1').innerHTML = 'history api を使うことができません。';
+	}
+}
+
+// backボタンで復元
+window.addEventListener('popstate', function(){
+	getHistoryApi(location.pathname, location.search);
+}, false);
+
+</script>
+</body>

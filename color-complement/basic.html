@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>たとえば、#cc025fをセットした場合</title>
+</head>
+<body>
+<script type="text/javascript" src="./color-complement.js"></script>
+<script type="text/javascript">
+var a = Color.info('#cc025f');
+document.write('<p>調査対象の色は、' + a['16'] + ' です。</p>');
+document.write('<p>この色の補色は、' + a['complementary16'] + ' です。</p>');
+document.write('<p>この色の反転色は、' + a['reversal16'] + ' です。</p>');
+document.write('<p>この色のRGBは、' + a['rgb'] + ' です。</p>');
+document.write('<p>この色の補色のRGBは、' + a['complementaryRgb'] + ' です。</p>');
+document.write('<p>この色の反転色のRGBは、' + a['reversalRgb'] + ' です。</p>');
+</script>
+</body>
+</html>

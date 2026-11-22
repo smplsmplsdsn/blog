@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>geolocation-API</title>
+</head>
+
+<body>
+
+<h1><a href="https://simplesimples.com/web/markup/javascript/geolocation_api/">Geolocation API</a></h1>
+
+<hr />
+
+<p>
+<a href="#" class="geo_get">現在地取得</a>
+<a href="#" class="geo_watch">現在地追従</a>
+<a href="#" class="geo_clear">取得解除</a>
+</p>
+
+<div class="results_error"></div>
+<div class="results"></div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var geo = {
+		getSuccess: function(position) {
+			$('.results_error').html('');
+			var txt = '<br /><br />結果';
+			txt += '<br />取得時間:' + position.timestamp;
+			txt += '<br />緯度:' + position.coords.latitude;
+			txt += '<br />緯度:' + position.coords.longitude;
+			txt += '<br />高度:' + position.coords.altitude;
+			txt += '<br />緯度・経度の誤差:' + position.coords.accuracy;
+			txt += '<br />高度の誤差:' + position.coords.altitudeAccuracy;
+			txt += '<br />方角:' + position.coords.heading;
+			txt += '<br />速度:' + position.coords.speed;
+			$('.results').append(txt);
+		},
+		getOnceSuccess: function(position) {
+			geo.clearPosition();
+			geo.getSuccess(position)
+
+		},
+		resultError: function(error) {
+			var err_txt = '予期せぬエラー';
+			switch (error.code) {
+				case 1:
+					geo.clearPosition();
+					err_txt = "PERMISSION_DENIED （位置情報の利用が許可されていません）";
+					break;
+				case 2:
+					geo.clearPosition();
+					err_txt = "POSITION_UNAVAILABLE （デバイスの位置が判定できません）";
+					break;
+				case 3:
+					err_txt = "TIMEOUT（タイムアウトしました）";
+					break;
+			}
+			$('.results_error').html(err_txt);
+		},
+		opt: {
+			maximumAge: 0,
+			timeout: 30000,
+			enableHighAccuracy: true
+		}
+
+	};
+
+	geo.getPosition = function(){
+		navigator.geolocation.getCurrentPosition(geo.getOnceSuccess, geo.resultError, geo.opt);
+		return false;
+	}
+	geo.watchPosition = function(){
+		if (navigator.geolocation.clearWatch) {
+			geo.getting = navigator.geolocation.watchPosition(geo.getSuccess, geo.resultError, geo.opt);
+		}
+		return false;
+	}
+	geo.clearPosition = function(){
+		if (geo.getting || 0 == geo.getting) navigator.geolocation.clearWatch(geo.getting);
+		return false;
+	}
+
+	if (navigator.geolocation) {
+		$('.geo_get').click(geo.getPosition);
+		$('.geo_watch').click(geo.watchPosition);
+		$('.geo_clear').click(geo.clearPosition);
+	} else {
+		$('.geo_get').remove();
+		$('.geo_watch').remove();
+		$('.geo_clear').remove();
+	}
+});
+</script>
+
+
+</body>
+</html>

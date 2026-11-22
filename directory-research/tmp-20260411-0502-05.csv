@@ -1,0 +1,12 @@
+
+ディレクトリ構造を取得して、自動でディレクトリー・ファイル一覧をつくる,1,index.html
+,,sample
+,,,assets
+,,,,css
+,,,,images
+,,,,js
+,,,dir1
+,2,,index.html
+,3,,sample1.html
+,4,,sample2.html
+,5,,sample3.HTML

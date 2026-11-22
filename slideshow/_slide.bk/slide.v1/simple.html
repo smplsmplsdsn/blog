@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>フォトスライド：0から目指すWebマスター</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="/slide/aitm_slide.css" media="all" />
+<style>
+#photo_min_wrap,
+#photo_min figure,
+#photo_min .img_wrap{width:250px;}
+
+#photo_min_slide,
+#photo_min figure,
+#photo_min .img_wrap{height:188px;}
+</style>
+<script src="/slide/aitm_slide.js"></script>
+<script>
+/*ie で html5要素認識用*/
+(function(){
+	if(!/*@cc_on!@*/0)return;
+	var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(',');
+	for(var i=0;i<e.length;i++){
+		document.createElement(e[i]);
+	}
+})();
+
+window.onload = function(){
+	photoSlide("photo_min");
+}
+</script>
+<body>
+
+<div id="photo_min_slide" class="photo_slide">
+<div id="photo_min_prev" class="photo_prev"><div>前へ</div></div>
+<div id="photo_min_wrap" class="photo_wrap">
+<div id="photo_min" class="photo">
+
+<figure class="caption_off">
+<div class="img_wrap"><img src="1.jpg" alt="" /></div>
+</figure>
+
+<figure class="caption_off">
+<div class="img_wrap"><img src="2.jpg" alt="" /></div>
+</figure>
+<figure class="caption_off">
+<div class="img_wrap"><img src="3.jpg" alt="" /></div>
+</figure>
+<figure class="caption_off">
+<div class="img_wrap"><img src="4.jpg" alt="" /></div>
+</figure>
+<figure class="caption_off">
+<div class="img_wrap"><img src="5.jpg" alt="" /></div>
+</figure>
+
+</div>
+</div>
+<div id="photo_min_next" class="photo_next"><div>次へ</div></div>
+<!--.photo_slide--></div>
+
+</body>
+</html>

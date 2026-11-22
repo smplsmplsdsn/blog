@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>touchイベントチェック | 0から目指すWebマスター</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<style>
+body{
+  margin: 0;
+  padding:0;
+  background:#fafafa;
+  font-size:13px;
+}
+p{
+  margin: 0 0 10px;
+  padding: 0;
+}
+p.last{
+  padding: 0 0 10px;
+  border-bottom:1px solid #aaa;
+}
+.tap-area{
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height:200px;
+  border-bottom: 1px solid #ccc;
+  background:#fff;
+  text-align: center;
+  line-height: 200px;
+}
+.result-area{
+  position: relative;
+  top:0;
+  left: 0;
+  z-index:1;
+  padding: 210px 20px 500px;
+}
+</style>
+</head>
+<body>
+  <div class="tap-area">touchエリア</div>
+  <div class="result-area"></div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      var _r = $('.result-area');
+
+      if ("object" == typeof document.documentElement.ontouchend) {
+        $('.tap-area')
+        .on('touchstart', function(){
+          _r.append('<p>start</p>');
+        })
+        .on('touchmove', function(){
+          _r.append('<p>move</p>');        
+        })
+        .on('touchend', function(){
+          _r.append('<p class="last">end</p>');        
+        });      
+      } else {
+        _r.append('<p>touchイベントに対応していません。</p>');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+$unit-padding: 1em;
+$unit-sub-color: #999;
+
+.unit {
+  margin: 0 0 $unit-padding*1.618;
+  padding: $unit-padding;
+  line-height: 1.5;
+  font-size: 12px;
+  
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 0 0 $unit-padding;
+  }
+  
+  &__maker {
+    white-space: nowrap;
+  }
+  &__name {
+    padding: 0 0 0 $unit-padding/2;
+    line-height: 1.2;
+  }
+  
+  &__ex {
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    > span:not(:last-child)::after {
+      content: '/';
+      padding: 0 3px;
+      font-size: 10px;
+    }
+    
+    > span {
+      white-space: nowrap;
+    }
+    
+    span span {
+      font-size: 10px;
+    }
+  }
+  
+  &__price-best {
+    color: $unit-sub-color;
+    font-size: 10px;
+  }
+  
+  &__column {
+    display: flex;
+    align-items: center;
+    padding: 0 0 $unit-padding;
+  }
+  
+  
+  &__img {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  &__text {
+    padding: 0 0 0 $unit-padding;
+  }
+  
+  &__spec {
+    overflow: hidden;
+    
+    div {
+      float: left;
+      display: flex;
+      align-items: center;
+    }
+    
+    dt,
+    dd {
+      white-space: nowrap;
+    }
+    
+    dt {
+      padding: 0 3px 0 0;
+      color: $unit-sub-color;
+      font-size: 10px;
+    }
+    
+    dd {
+      padding: 0 10px 0 0;
+    }
+  }
+  
+  &__add {
+    padding: $unit-padding/2 0 0;
+    font-size: 11px;
+  }
+  
+  &__price-label {
+    font-size: 10px;
+  }
+  
+  &__price-num {
+    font-size: 18px;
+    span {
+      font-size: 10px;
+    }
+  }
+  
+  &__price-date {
+    font-size: 10px;
+  }
+  
+  &__footer {
+    display: flex;
+    padding: $unit-padding 0 0;
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    padding: 0 8px;
+    border: 1px solid $color-link;
+    border-radius: 2px;
+    font-size: 11px;
+    
+    &:first-child {
+      margin: 0 5px 0 0;
+    }
+  }
+}
