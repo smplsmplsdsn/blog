@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>html5タグ一覧 | 0から目指すWebマスター</title>
+<meta name="robots" content="NONE" />
+<meta name="description" content="html5のタグをまとめてみました。0から目指すWebマスターでは、Webを様々な角度から切り込み、Webに関する様々な知識を学んでいくための備忘録・情報サイトです。" />
+<meta name="keywords" content="html5,要素,タグ,コンテンツモデル。" />
+<style type="text/css">
+body{margin:0;padding:0;font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Verdana,Helvetica,Arial,"ＭＳ Ｐゴシック",sans-serif;color:#666;font-size:12px;}
+
+article,section,hgroup{display:block;}
+
+header,
+section,
+aside{padding:10px;}
+
+aside{background:#f5f5f5;}
+
+table{margin:0 10px;border-collapse:collapse;font-size:12px;}
+th,td{border:1px solid #ccc;padding:10px;}
+tr.type1{}
+tr.type2{}
+tr.type3{}
+tr.type4{}
+tr.type5{}
+tr.type6{}
+tr.type7{}
+tr.type8{}
+tr.type9{}
+tr.type10{}
+tr.type11{}
+
+td.caution{background:#f5f5f5;color:#000;text-decoration:underline;cursor:default;}
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(4),
+tbody tr td:nth-child(5),
+tbody tr td:nth-child(6),
+tbody tr td:nth-child(7),
+tbody tr td:nth-child(8),
+tbody tr td:nth-child(9),
+tbody tr td:nth-child(10),
+tbody tr td:nth-child(11),
+tbody tr td:nth-child(12),
+tbody tr td:nth-child(13){width:2em;text-align:center;}
+</style>
+<script type="text/javascript">
+(function(){
+if(!/*@cc_on!@*/0)return;
+var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,figcaption,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(',');
+for(var i=0;i<e.length;i++){document.createElement(e[i]);}
+})();
+</script>
+</head>
+<body>
+<aside>
+<a href="https://simplesimples.com/web/markup/html/html5_1/">html5の要素とコンテンツモデル（0から目指すWebマスター）</a>
+</aside>
+
+<header>
+<h1>html5タグ一覧</h1>
+<p>2012年2月4日に更新されたW3Cの「<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html">HTML5 A vocabulary and associated APIs for HTML and XHTML Editor's Draft</a>」の中から「第3章 2-5節 コンテンツモデル」と「第4章 HTMLの要素」をまとめてみました。<br />
+よくわからないところは、原文のまま抜粋しています。</p>
+</header>
+
+<article>
+
+<section>
+
+<h1>要素は大別して11つのタイプに分けることができる。</h1>
+
+<ol>
+<li>ルート要素（The root element）</li>
+<li>ドキュメントメタデータ（Documnet metadata）</li>
+<li>スクリプティング（Scripting）</li>
+<li>セクション（Sections）</li>
+<li>グルーピングコンテント（Grouping content）</li>
+<li>テキストレベルセマンティック（Text-level semantics）</li>
+<li>エディット（Edits）</li>
+<li>エンベッディッドコンテント（Embedded content）</li>
+<li>テーブラーデータ（Tabular data）</li>
+<li>フォーム（Forms）</li>
+<li>インタラクティブ要素（Interactive elements）</li>
+</ol>
+
+</section>
+
+
+<section>
+<h1>コンテンツ・モデル</h1>
+<p>html4までは「インラインレベル要素」か「ブロックレベル要素」がキーワードだったが、html5ではその概念は一切ない。<br />
+その代わりに「コンテンツ・モデル」という概念を意識する必要がある。</p>
+
+<p>各要素は、下記のいずれかに0個以上に属する。</p>
+<dl>
+<dt>メタデータ・コンテンツ (Metadata content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#metadata-content-0">sets up the presentation or behavior of the rest of the content, <br>
+or that sets up the relationship of the document with other documents, <br>
+or that conveys other "out of band" information.</a></p>
+</dd>
+<dt>フロー・コンテンツ (Flow content)</dt>
+<dd>
+<p>ドキュメントのbody内で使われるほとんどの要素やアプリケーションがフロー・コンテンツとしてカテゴライズする要素。</p>
+</dd>
+<dt>セクショニング・コンテンツ (Sectioning content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#flow-content-0">defines the scope of headings and footers.</a></p>
+<p><strong>潜在的に</strong>見出しとアウトラインを持つ。<br>
+  ちなみに、アウトラインを持つ（セクショニング・ルート）要素は、
+詳細は<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#headings-and-sections">見出しとセクション</a></p>
+</dd>
+<dt>ヘッディング・コンテンツ (Heading content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#heading-content-0">defines the header of a section (whether explicitly marked up using sectioning content elements, or implied by the heading content itself).</a></p>
+</dd>
+<dt>フレージング・コンテンツ (Phrasing content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#phrasing-content-0">Phrasing content is the text of the document, <br>
+as well as elements that mark up that text at the intra-paragraph level. <br>
+Runs of phrasing content form paragraphs.</a></p>
+</dd>
+<dt>エンベッディッド・コンテンツ (Embedded content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#embedded-content-0">imports another resource into the document, or content from another vocabulary that is inserted into the document.</a></p>
+</dd>
+<dt>インタラクティブ・コンテンツ (Interactive content)</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#interactive-content-0">is specifically intended for user interaction.</a></p>
+</dd>
+<dt>（Palpable content）</dt>
+<dd>
+<p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#palpable-content-0">As a general rule, elements whose content model allows any flow content or phrasing content should have at least one child node that is palpable content and that does not have the hidden attribute specified.</a></p></dd>
+<dt>（Transparent content models）</dt>
+<dd><p><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#transparent-content-models">Some elements are described as transparent; <br>
+  they have "transparent" in the description of their content model. <br>
+  The content model of a transparent element is derived from the content model of its parent element: <br>
+  the elements required in the part of the content model that is "transparent" are the same elements as required in the part of the content model of the parent of the transparent element in which the transparent element finds itself.</a></p></dd>
+</dl>
+
+<figure><img src="/img/markup/xhtml_contentmodel.png" alt="" /></figure>
+
+
+</section>
+
+<section>
+<h1>カテゴリー</h1>
+<dl>
+<dd>M：メタデータ・コンテンツ (Metadata content)</dd>
+<dd>F：フロー・コンテンツ (Flow content)</dd>
+<dd>S：セクショニング・コンテンツ (Sectioning content)</dd>
+<dd>H：ヘッディング・コンテンツ (Heading content)</dd>
+<dd>P：フレージング・コンテンツ (Phrasing content)</dd>
+<dd>E：エンベッディッド・コンテンツ (Embedded content)</dd>
+<dd>I：インタラクティブ・コンテンツ (Interactive content)</dd>
+<dd>Pa : Palpable content</dd>
+<dd>T：トランスペアレント</dd>
+<dd>Sr：セクショニングルート</dd>
+<dd>Fa：form-associated element</dd>
+</dl>
+</section>
+
+<!-- ▼タグ一覧▼ -->
+<table>
+<thead>
+<tr>
+<th rowspan="2" style="width:15em;">タグタイプ</th>
+<th rowspan="2">タグ名</th>
+<th colspan="11">その要素のコンテンツモデル<br />
+<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#element-dfn-categories">Categories</a></th>
+<th rowspan="2">その要素の子<br />
+<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#element-dfn-content-model">Content model</a></th>
+<th rowspan="2">その要素の親<br />
+<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#element-dfn-contexts">Contexts in which this element can be used</a></th>
+<th rowspan="2">&nbsp;</th>
+</tr>
+<tr>
+<th title="メタデータ・コンテンツ (Metadata content)">M</th>
+<th title="ヘッディング・コンテンツ (Heading content)">H</th>
+<th title="フロー・コンテンツ (Flow content)">F</th>
+<th title="フレージング・コンテンツ (Phrasing content)">P</th>
+<th title="セクショニング・コンテンツ (Sectioning content)">S</th>
+<th title="セクショニングルート">Sr</th>
+<th title="インタラクティブ・コンテンツ (Interactive content)">I</th>
+<th title="エンベッディッド・コンテンツ (Embedded content)">E</th>
+<th title="Palpable content">Pa</th>
+<th title="form-associated element">fa</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="type1">
+<th>ルート要素</th>
+<th>html</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>ひとつのheadとその後にひとつのbody要素が続く</td>
+<td>ドキュメントのルート要素として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>head</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-head-element">割愛</a><br />
+さもなければ、title要素を含むひとつ以上のM
+</td>
+<td>html要素の最初の要素として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>title</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>テキスト</td>
+<td>head内（一度のみ）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>base</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>head内（一度のみ）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>link</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td> ・Mを子にできる要素（例：head）<br />
+・headの子となるnoscript内。</td>
+<td>重要属性 title</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>meta</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td> ・head内（「charset属性あり、もしくはhttp-equiv属性がエンコードする宣言状態である場合」「http-equiv属性あり、しかしエンコードする宣言状態ではない場合」）<br />
+・headの子となるnoscript内（http-equiv属性あり、しかしエンコードする宣言状態ではない場合）。<br />
+・Mを子にできる要素（name属性が存在する場合） </td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type2">
+<th>ドキュメントメタデータ</th>
+<th>style</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td title="scoped属性がある場合" class="caution">F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-style-element">割愛</a></td>
+<td> ・head内、もしくはheadの子となるnoscript内（scoped属性がない場合）<br />
+・Fを子にできる要素（scoped属性がある場合。but before any other flow content other than inter-element whitespace, and not as the child of an element whose content model is transparent.）。 </td>
+<td>重要属性 title</td>
+</tr>
+<tr class="type3">
+<th>スクリプティング</th>
+<th>script</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-script-element">割愛</a></td>
+<td> ・Fを子にできる要素<br />
+・Pを子にできる要素 </td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type3">
+<th>スクリプティング</th>
+<th>noscript</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-noscript-element">割愛</a></td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-noscript-element">割愛</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>body</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>html要素の2番目の要素として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>section</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>S</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>nav</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>S</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>article</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>S</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>aside</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>S</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>h1～h6</th>
+<td>&nbsp;</td>
+<td>H</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td> ・hgroupの子として<br />
+・Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>hgroup</th>
+<td>&nbsp;</td>
+<td>H</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>ひとつ以上の h1～h6 要素</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>header</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にheader,footerを一切含まない">F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>footer</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にheader,footerを一切含まない">F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type4">
+<th>セクション</th>
+<th>address</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にheader,footer,H,Sを一切含まない">F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>p</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Fを子にできる要素</td>
+<td>p内にulはNG</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>hr</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>pre</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>blockquote</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>ol</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="子にひとつ以上の li がある場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0個以上の li</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>ul</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="子にひとつ以上の li がある場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0個以上の li</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>li</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>F</td>
+<td>ol要素内<br />
+ul要素内<br />
+menu要素内</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>dl</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="子にひとつ以上の name-value group がある場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>1個以上のdt、それに続いて1個以上のddを含む、0個以上のグループ</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>dt</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td class="caution" title="ただし、子孫にheader,footer,H,Sを一切含まない">F</td>
+<td>dl内のddまたはdtの前</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>dd</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>F</td>
+<td>dl内のdt またはddの後</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>figure</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>
+・ひとつのfigcaption要素とその前後にF<br />
+・F
+</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>figcaption</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>F</td>
+<td>figure要素の最初または最後の子として。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type5">
+<th>グルーピングコンテント</th>
+<th>div</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>a</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td class="caution" title="Pのみ含む場合">P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、Iを含まない">T</td>
+<td>Pのみ含む場合：Pを子にできる要素<br />
+それ以外：Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>em</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>strong</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>small</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>s</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>cite</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>q</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>dfn</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にdfnを含まない">P</td>
+<td>Pを子にできる要素</td>
+<td>重要属性 title</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>abbr</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>重要属性 title</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>time</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>code</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>var</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>samp</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>kbd</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>subとsup</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>i</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>b</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>u</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>mark</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>ruby</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-ruby-element">One or more groups of: phrasing content followed either by a single rt element, or an rp element, an rt element, and another rp element.</a></td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>rt</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>P</td>
+<td>ruby要素の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>rp</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>P</td>
+<td>ruby要素の子として（ただし、rtの直前または直後にあること）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>bdi</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>重要属性 dir</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>bdo</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>重要属性 dir</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>span</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>br</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type6">
+<th>テキストレベルセマンティック</th>
+<th>wbr</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type7">
+<th>エディット</th>
+<th>ins</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td class="caution" title="Pのみ含む場合">P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>T</td>
+<td>Pのみ含む場合：Pを子にできる要素<br />
+それ以外：Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type7">
+<th>エディット</th>
+<th>del</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td class="caution" title="Pのみ含む場合">P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>T</td>
+<td>Pのみ含む場合：Pを子にできる要素<br />
+それ以外：Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>img</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="usemap属性ありの場合">I</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>iframe</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-iframe-element">割愛</a></td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>embed</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>object</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="usemap属性を持つ場合">I</td>
+<td>E</td>
+<td>Pa</td>
+<td class="caution" title="Listed, submittable">fa</td>
+<td>&nbsp;</td>
+<td><p>0個以上のparam要素。そしてT</p></td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>param</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>空</td>
+<td>object要素の子として（ただしFの前）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>video</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="controls属性を持つ場合">I</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>
+0個以上のtrack要素。そしてT（ただし、子孫にメディア要素（video、audio）を含まない）。<br />
+また、src属性ない場合：上記に追加：0個以上のsource要素</td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>audio</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="controls属性を持つ場合">I</td>
+<td>E</td>
+<td class="caution" title="controls属性を持つ場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p>0個以上のtrack要素。そしてT（ただし、子孫にメディア要素（video、audio）を含まない）。<br />
+また、src属性ない場合：上記に追加：0個以上のsource要素<br />
+</p></td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>source</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>空</td>
+<td>メディア要素（video、audio）の子として（ただし、Fやtrack要素の前）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>track</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>空</td>
+<td>メディア要素（video、audio）の子として（ただし、Fの前）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>canvas</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>T</td>
+<td>Eを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>map</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td class="caution" title="Pのみ含む場合">P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>T</td>
+<td>Pのみ含む場合：Pを子にできる要素<br />
+それ以外：Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type8">
+<th>エンベッディッドコンテント</th>
+<th>area</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>F（ただし、祖先にmap要素がある場合）</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>table</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-table-element">割愛</a></td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>caption</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td class="caution" title="ただし、子孫にtableを含まない">F</td>
+<td>tableの最初の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>colgroup</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>span属性がある場合：空。<br />
+span属性がない場合：0個以上のcol要素。</td>
+<td class="caution" title="ただし、caption要素より後ろで、thead,tbody,tfoot,trより前">tableの子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>col</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>空</td>
+<td>span属性を持たないcolgroup要素として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>tbody</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>0個以上のｔｒ要素</td>
+<td class="caution" title="ただし、caption, colgroup, theadより後ろで、tableの子としてtrがない場合">tableの子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>thead</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>0個以上のｔｒ要素</td>
+<td class="caution" title="ただし、caption, colgroupの後で, tbody,tfoot, trより,前。tableの子としてtheadがない場合">tableの子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>tfoot</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>0個以上のｔｒ要素</td>
+<td class="caution" title="ただし、caption, colgroup,theadの後で, tbody, trより,前。tableの子としてtfootがない場合">tableの子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>tr</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>0個以上のtd要素かth要素</td>
+<td class="caution" title="ただし、tableの子の場合、caption,colgroup,theadの後で、tableの子としてtbodyがない場合">
+・theadの子として<br />
+・tbodyの子として<br />
+・tfootの子として<br />
+・tableの子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>td</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>tr要素の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type9">
+<th>テーブラーデータ</th>
+<th>th</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>P</td>
+<td class="caution" title="ただし、子孫にheader,footer,S,Hを含まない">tr要素の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>form</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にformを含まない">F</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>fieldset</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed">fa</td>
+<td>&nbsp;</td>
+<td>ひとつのlegend要素とFが続く</td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>legend</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>P</td>
+<td>fieldset要素の最初の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>label</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>fa</td>
+<td>&nbsp;</td>
+<td>P<br />
+<a target="_w3c" href="http://dev.w3.org/html5/spec/Overview.html#the-label-element">ただしwith no descendant labelable elements unless it is the element's labeled control, and no descendant label elements.</a></td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>input</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="hidden属性を持たない場合">I</td>
+<td>&nbsp;</td>
+<td class="caution" title="hidden属性を持たない場合">Pa</td>
+<td class="caution" title="Listed, submittable, resettable, hidden属性を持たない場合(labelable)">fa</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>button</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed, labelable, submittable">fa</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にIを含まない">F</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>select</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed, labelable, submittable, resettable">fa</td>
+<td>&nbsp;</td>
+<td>0個以上のoptionまたはoptgroup</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>datalist</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Fか 0個以上の option のいずれか</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>optgroup</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>0個以上の option</td>
+<td>select の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>option</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>テキスト</td>
+<td> ・select の子として<br />
+・datalist の子として<br />
+・optgroup の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>textarea</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed, labelable, submittable, resettable">fa</td>
+<td>&nbsp;</td>
+<td>テキスト</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>keygen</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed, labelable, submittable, resettable">fa</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>output</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Listed, labelable, resettable">fa</td>
+<td>&nbsp;</td>
+<td>P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>progress</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Labelable element">xx</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にprogressを含まない">P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type10">
+<th>フォーム</th>
+<th>meter</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td class="caution" title="Labelable element">xx</td>
+<td>&nbsp;</td>
+<td class="caution" title="ただし、子孫にmeter要素を含まない">P</td>
+<td>Pを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type11">
+<th>インタラクティブ要素</th>
+<th>details</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>Sr</td>
+<td>I</td>
+<td>&nbsp;</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><p>ひとつのsummary要素とその後にFが続く</p></td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type11">
+<th>インタラクティブ要素</th>
+<th>summary</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>×</td>
+<td>P</td>
+<td>details の最初の子として</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type11">
+<th>インタラクティブ要素</th>
+<th>command</th>
+<td>M</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>空</td>
+<td> ・Fを子にできる要素<br />
+・Pを子にできる要素</td>
+<td>重要属性 title</td>
+</tr>
+<tr class="type11">
+<th>インタラクティブ要素</th>
+<th>menu</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="type属性値が toolbar の場合">I</td>
+<td>&nbsp;</td>
+<td class="caution" title="type属性が toolbar もしくは list の場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0個以上の li<br />
+か
+<br />
+F のいずれか <br /></td>
+<td>Fを子にできる要素</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr class="type11">
+<th>他</th>
+<th>(math)</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><br /></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type11">
+<th>他</th>
+<th>(svg)</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>E</td>
+<td>Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><br /></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="type11">
+<th>他</th>
+<th>(text)</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>F</td>
+<td>P</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td class="caution" title="inter-element whitespaceでない場合">Pa</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><br /></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+<section>
+<dl>
+<dt>F（ほとんどの要素）を子にできる要素</dt>
+<dd>body, section, nav, article, aside, header(*), footer(*), address(*), blockquote, li, dt(*), dd, figure, figcaption, div, caption(*), td, form(*), button(*), datalist, details(*), menu</dd>
+<dt>Pを子にできる要素</dt>
+<dd>h1～h6, p, pre, em, strong, small, s, cite, q, dfn(*), abbr, time, code, var, samp, kbd, sub, sup, i, b, u, mark, rt, rp, bdi, bdo, span, th, legend, label(*), output, progress(*), meter(*), summary</dd>
+<dt>Tを子にできる要素</dt>
+<dd>a(*), ins, del, canvas, map</dd>
+<dt>それ以外</dt>
+<dd>ruby, iframe, object, video, audio, table, colgroup, ・・・</dd>
+</dl>
+</section>
+
+<!-- ▲タグ一覧▲ -->
+
+</article>
+</body>
+</html>
